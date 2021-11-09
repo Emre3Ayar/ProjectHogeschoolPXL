@@ -1,0 +1,48 @@
+﻿@model IEnumerable<HogeschoolPXL.Data.Tables.Lector>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lijst van Lectors</h1>
+
+<p>
+    <a asp-action="Create" style="font-size:150%">Nieuwe Lector</a>
+</p>
+<table border="1" style="width: 90%; background-color: #E8E8E8; border-color: #0084F1; border-width: 20px;font-size: 160%">
+    <thead style="background-color:black;color:white;text-align:center">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Gebruiker.Voornaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gebruiker.Naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gebruiker.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="font-weight: 800; padding-left:10px">
+                    @Html.DisplayFor(modelItem => item.Gebruiker.Voornaam)
+                </td>
+                <td style="font-weight: 800; padding-left:10px">
+                    @Html.DisplayFor(modelItem => item.Gebruiker.Naam)
+                </td>
+                <td style="font-weight: 800; padding-left:10px">
+                    @Html.DisplayFor(modelItem => item.Gebruiker.Email)
+                </td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.LectorId">Edit</a> -
+                    <a asp-action="Details" asp-route-id="@item.LectorId">Details</a> -
+                    <a asp-action="Delete" asp-route-id="@item.LectorId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

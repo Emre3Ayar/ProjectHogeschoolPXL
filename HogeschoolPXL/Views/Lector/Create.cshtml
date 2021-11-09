@@ -1,0 +1,52 @@
+﻿@model HogeschoolPXL.Data.Tables.Lector
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Lector registreren</h1>
+
+<hr />
+<div class="card-columns">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="width:200%">
+                <label asp-for="LectorId" class="control-label"></label>
+                <input asp-for="LectorId" class="form-control" />
+                <span asp-validation-for="LectorId" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:200%">
+                <label asp-for="GebruikerId" class="control-label"></label>
+                <input asp-for="GebruikerId" class="form-control" />
+                <span asp-validation-for="GebruikerId" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:200%">
+                <label asp-for="Gebruiker.Naam" class="control-label"></label>
+                <input asp-for="Gebruiker.Naam" class="form-control" />
+                <span asp-validation-for="Gebruiker.Naam" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:200%">
+                <label asp-for="Gebruiker.Voornaam" class="control-label"></label>
+                <input asp-for="Gebruiker.Voornaam" class="form-control" />
+                <span asp-validation-for="Gebruiker.Voornaam" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="width:200%">
+                <label asp-for="Gebruiker.Email" class="control-label"></label>
+                <input asp-for="Gebruiker.Email" class="form-control" />
+                <span asp-validation-for="Gebruiker.Email" class="text-danger"></span>
+            </div>
+            <div>
+                <input type="submit" value="Create" style="background-color: #0084F1; color: white; font-size: 200%; border: solid black 5px" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div style="margin-top:5%">
+    <a asp-action="Index" style="background-color: black; color: #0084F1; padding: 1%; border: solid #0084F1 5px ">Naar lijst</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
