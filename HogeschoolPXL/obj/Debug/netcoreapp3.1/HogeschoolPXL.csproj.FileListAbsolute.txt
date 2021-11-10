@@ -154,3 +154,4 @@ C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\D
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\HogeschoolPXL.pdb
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\HogeschoolPXL.genruntimeconfig.cache
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\TimeTrack.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Handboek\Index.cshtml.g.cs

@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace HogeschoolPXL.Data.Tables
 {
-    public class Lector
+    public class Vak
     {
-        public int LectorId { get; set; }
+        public int VakId { get; set; }
         [Required]
-        public int GebruikerId { get; set; }
+        public string VakNaam { get; set; }
+
+        public double StudiePunten { get; set; }
+
+        public int HandboekId { get; set; }
 
 
-        public Gebruiker Gebruiker { get; set; }
         public ICollection<VakLector> VakLectors { get; set; }
+        public Handboek Handboek { get; set; }
     }
 }

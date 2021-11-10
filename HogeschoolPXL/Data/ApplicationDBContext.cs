@@ -17,5 +17,11 @@ namespace HogeschoolPXL.Data
         public DbSet<Gebruiker> Gebruikers { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Lector> Lectors { get; set; }
+
+        public DbSet<VakLector> VakLectors { get; set; }
+        public DbSet<Handboek> Handboeken { get; set; }
+        public DbSet<Inschrijving> Inschrijvingen { get; set; }
+        public DbSet<AcademieJaar> AcademieJaren { get; set; }
+        public DbSet<Vak> Vakken { get; set; }
     }
 }

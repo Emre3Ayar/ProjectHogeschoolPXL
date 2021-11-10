@@ -15,5 +15,6 @@ namespace HogeschoolPXL.Data.Tables
         public string Email { get; set; }
 
         public ICollection<Student> Students { get; set; }
+        public ICollection<Lector> Lectors { get; set; }
     }
 }
