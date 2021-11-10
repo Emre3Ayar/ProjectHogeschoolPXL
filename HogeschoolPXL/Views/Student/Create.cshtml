@@ -1,11 +1,17 @@
 ﻿@model HogeschoolPXL.Data.Tables.Student
-
 @{
     ViewData["Title"] = "Create";
+    //Dit is voor de automatische invulling van GebruikerId
+    //var LastGebruiker = ViewBag.LastGebruiker;
+    //string lastitem = "";
+    //string i = "";
+    //foreach (var item in LastGebruiker)
+    //{
+    //    i = item;
+    //}
 }
 
 <h1>Student registreren</h1>
-
 <hr />
 <div class="card-columns">
     <div class="col-md-4">
@@ -18,22 +24,22 @@
             </div>
             <div class="form-group" style="width:200%">
                 <label asp-for="GebruikerId" class="control-label"></label>
-                <input asp-for="GebruikerId" class="form-control" />
+                <input asp-for="GebruikerId" class="form-control" value=""/>
                 <span asp-validation-for="GebruikerId" class="text-danger"></span>
             </div>
             <div class="form-group" style="width:200%">
                 <label asp-for="Gebruiker.Naam" class="control-label"></label>
-                <input asp-for="Gebruiker.Naam" class="form-control" />
+                <input asp-for="Gebruiker.Naam" class="form-control" value="" />
                 <span asp-validation-for="Gebruiker.Naam" class="text-danger"></span>
             </div>
             <div class="form-group" style="width:200%">
                 <label asp-for="Gebruiker.Voornaam" class="control-label"></label>
-                <input asp-for="Gebruiker.Voornaam" class="form-control" />
+                <input asp-for="Gebruiker.Voornaam" class="form-control" value=""/>
                 <span asp-validation-for="Gebruiker.Voornaam" class="text-danger"></span>
             </div>
             <div class="form-group" style="width:200%">
                 <label asp-for="Gebruiker.Email" class="control-label"></label>
-                <input asp-for="Gebruiker.Email" class="form-control" />
+                <input asp-for="Gebruiker.Email" class="form-control" value=""/>
                 <span asp-validation-for="Gebruiker.Email" class="text-danger"></span>
             </div>
             <div>

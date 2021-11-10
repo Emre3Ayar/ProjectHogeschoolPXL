@@ -13,7 +13,7 @@ namespace HogeschoolPXL.Data
         public static void EnsurePopulated(IApplicationBuilder app)
         {
             ApplicationDBContext context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<ApplicationDBContext>();
-            if (!context.Gebruikers.Any())
+            if (!context.Gebruikers.Any() && !context.Students.Any() && !context.Lectors.Any())
             {
                 var gebruiker = new Gebruiker { Naam = "Ayar", Voornaam = "Emre", Email = "emre@hotmail.com" };
                 var gebruiker2 = new Gebruiker { Naam = "Bob", Voornaam = "Marley", Email = "bob@hotmail.com" };

@@ -26,7 +26,10 @@ namespace HogeschoolPXL.Controllers
         //Nieuwe student aanmaken
         public IActionResult Create()
         {
+            //var student = new Student();
             var student = new Student();
+            var gebruiker =  _context.Gebruikers.OrderByDescending(x => x.GebruikerId).ToList();
+            ViewBag.LastGebruiker = gebruiker;
             return View(student);
         }
         public IActionResult Details(int id)
@@ -50,7 +53,7 @@ namespace HogeschoolPXL.Controllers
         {
             //Gebruiker maken die een student is
             Gebruiker g = (Gebruiker) student;
-            var s = new Student();
+            var s = new Student { Gebruiker = g};
             _context.Gebruikers.Add(g);
             _context.Students.Add(s);
             _context.SaveChanges();
