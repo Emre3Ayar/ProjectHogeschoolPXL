@@ -1,5 +1,6 @@
 ﻿using HogeschoolPXL.Data;
 using HogeschoolPXL.Data.Tables;
+using HogeschoolPXL.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -32,10 +33,19 @@ namespace HogeschoolPXL.Controllers
             ViewBag.LastGebruiker = gebruiker;
             return View(student);
         }
-        public IActionResult Details(int id)
+        public async Task<IActionResult> DetailsAsync(int? id)
         {
-            var student = _context.Students.Where(x => x.StudentId == id).FirstOrDefault();
-            return View(student);
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var student = await _context.Students.Include(x => x.Gebruiker).FirstOrDefaultAsync(x => x.StudentId == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            var studentCard = new StudentCard(_context, student);
+            return View(studentCard);
         }
         [HttpPost]
         public IActionResult Create(Gebruiker gebruiker)
@@ -57,6 +67,51 @@ namespace HogeschoolPXL.Controllers
             _context.Gebruikers.Add(g);
             _context.Students.Add(s);
             _context.SaveChanges();
+        }
+        public async Task<IActionResult> Delete (int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var student = await _context.Students.Include(x => x.Gebruiker).FirstOrDefaultAsync(x => x.StudentId == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            var studentCard = new StudentCard(_context, student);
+            return View(studentCard);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var student = await _context.Students.FindAsync(id);
+            _context.Students.Remove(student);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var student = await _context.Students.Include(x => x.Gebruiker).FirstOrDefaultAsync(x => x.StudentId == id);
+            var studentCard = new StudentCard(_context, student);
+            return View(studentCard);
+        }    
+        public IActionResult Edit(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Gebruikers.Update(student.Gebruiker);
+                _context.Students.Update(student);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction("Index");
+        }
+        private bool StudentExists(int id)
+        {
+            return _context.Students.Any(x => x.StudentId == id);
         }
     }
 }

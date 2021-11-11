@@ -34,12 +34,45 @@ namespace HogeschoolPXL.Controllers
             return View(handboek);
         }
         [HttpPost]
-        public IActionResult Create(Gebruiker gebruiker)
+        public IActionResult Create(Handboek handboek)
         {
             if (ModelState.IsValid)
             {
+                AddHandboek((Handboek)handboek);
+                return RedirectToAction("Index");
             }
-            return View("Index");
+            //Lector met gebruiker property's
+            return View(handboek);
+        }
+        private void AddHandboek(Handboek handboek)
+        {
+            //Gebruiker maken die een lector is
+            Handboek h = (Handboek)handboek;
+            //var h = new Handboek();
+            _context.Handboeken.Add(h);
+            _context.SaveChanges();
+        }
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var handboek = await _context.Handboeken.FirstOrDefaultAsync(x => x.HandboekId == id);
+            if (handboek == null)
+            {
+                return NotFound();
+            }
+            return View(handboek);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var handboek = await _context.Handboeken.FindAsync(id);
+            _context.Handboeken.Remove(handboek);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

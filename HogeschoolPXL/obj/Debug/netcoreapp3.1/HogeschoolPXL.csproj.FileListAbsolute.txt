@@ -155,3 +155,10 @@ C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\D
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\HogeschoolPXL.genruntimeconfig.cache
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\TimeTrack.cshtml.g.cs
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Handboek\Index.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Student\Delete.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Student\Edit.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Lector\Details.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Lector\Delete.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Handboek\Create.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Handboek\Delete.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Handboek\Details.cshtml.g.cs

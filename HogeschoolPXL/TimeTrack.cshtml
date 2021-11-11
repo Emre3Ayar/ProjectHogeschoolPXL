@@ -2,7 +2,10 @@
 @model HogeschoolPXL.TimeTrackModel
 @{
 }
-<body>
+<h1>BELANGRIJK</h1>
+<h1>De Database werkt 100%, soms word het niet aangemaakt(zelf aanmaken) PXL_Emre_Ayar</h1>
+
+<body id="TimeTrack">
     <p>6/10/2021: Begonnen met classes maken en views met Datacontext en simpel css opmaak</p>
     <p>17/10/2021: Appsettings, startup.cs databank maken met Connectionstrings,Seeddata, foreignkeys tussen tables</p>
     <p>2/11/2021: Foreignkeys tussen classes,seeddata(aanpassen)</p>
@@ -10,4 +13,34 @@
     <p>4/11/2021: css-styling, migrations</p>
     <p>7/11/2021: opnieuw begonnen, probleem met database migration</p>
     <p>8/11/2021: Lector klasse gemaakt met view, controller en de css</p>
+    <p>
+        9/11/2021: Alle klasses aangemaakt met de foreign keys en migrations (dezelfde fout gehad zie 7/11/2021 maar nu opgelost)
+        BELANGRIJK: fout was public int? VakLectorId { get; set; }
+        Index pagina Student,Lector
+    </p>
+    <p>11/11/2021: Delete,Detail,Edit pagina voor: Handboek,Lector,Student</p>
+
+    <div id="ToDo">
+        <ul>
+            <li>- Edit pagina's werken nog niet</li>
+            <li>- Zelfvulende data bij create om problemen te voorkomen</li>
+            <li>- Edit pagina's werken nog niet</li>
+            <li>- Geen enkel ModelValidation</li>
+            <li>- Seeddata mist AcademieJaar, Inschrijving</li>
+        </ul>
+    </div>
+    <div id="Done">
+        <ul>
+            <li>- Detail,Index,Delete,Create pagina's werken allemaal voor Student,Lector,Handboek</li>
+            <li>- Taghelper: LectorCard,StudentCard</li>
+            <li>- Seeddata meerderheid klaar</li>
+            <li>- Controllers werken</li>
+            <li>- Overal CSS styling toegepast (kan op een betere manier maar door gebrek aan tijd)</li>
+        </ul>
+    </div>
+    <p>
+        Ik weet dat er enkele stukken nog niet in orde is.
+        Ik heb veel problemen gehad in het midden van mijn project.
+        Om het nog goed af te ronden ben ik rustig opnieuw begonnen en stap voor stap alles geimplementeerd
+    </p>
 </body>

@@ -27,7 +27,7 @@ using HogeschoolPXL.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"17d519f9db35a03a3c874632859645b972a8f656", @"/Views/Handboek/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d27fca1d6c0682f4c297084928aa15880807515a", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1cf08dbac3995c3f588ffc748a1ab203173a7093", @"/Views/_ViewImports.cshtml")]
     public class Views_Handboek_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<HogeschoolPXL.Data.Tables.Handboek>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
