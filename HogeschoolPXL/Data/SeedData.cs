@@ -1,5 +1,6 @@
 ﻿using HogeschoolPXL.Data.Tables;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,13 @@ namespace HogeschoolPXL.Data
 {
     public class SeedData
     {
-        public static void EnsurePopulated(IApplicationBuilder app)
+        public static void MigrateAndPopulated(IApplicationBuilder app)
         {
             ApplicationDBContext context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<ApplicationDBContext>();
+            if (context.Database.GetPendingMigrations().Any())
+            {
+                context.Database.Migrate();
+            }
             if (!context.Gebruikers.Any() && !context.Students.Any() && !context.Lectors.Any() && !context.Handboeken.Any())
             {
                 var gebruiker = new Gebruiker { Naam = "Ayar", Voornaam = "Emre", Email = "emre@hotmail.com" };

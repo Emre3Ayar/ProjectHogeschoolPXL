@@ -55,7 +55,7 @@ namespace HogeschoolPXL
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-            SeedData.EnsurePopulated(app);
+            SeedData.MigrateAndPopulated(app);
         }
     }
 }

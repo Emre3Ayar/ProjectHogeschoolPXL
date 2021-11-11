@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GDV2bO7RQPQTpUTgq+WqKHIyBvvFA3h4UeOj48KgYA4fKk5FpU57j/RP1xu+9cDMrlkEufEaKQHiDjQfCyTO0Q==",
+  "dgSpecHash": "xsFweFVCEpOIhPpD6L8dl54//P25hgtzp16w4Wwb6GNRZlNnOMFEaK4QgCD1bcZk50iXXES8eVQzCsd0A0QRhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emer-\\OneDrive\\Documenten\\CWeb\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj",
+  "projectFilePath": "C:\\CWeb\\HogeschoolPXL\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emer-\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\emer-\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
