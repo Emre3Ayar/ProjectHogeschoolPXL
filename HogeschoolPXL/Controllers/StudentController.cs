@@ -1,7 +1,9 @@
 ﻿using HogeschoolPXL.Data;
 using HogeschoolPXL.Data.Tables;
 using HogeschoolPXL.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace HogeschoolPXL.Controllers
 {
+    //[Authorize]
     public class StudentController : Controller
     {
         ApplicationDBContext _context;
@@ -24,15 +27,7 @@ namespace HogeschoolPXL.Controllers
             var student = _context.Students.Include(a => a.Gebruiker);
             return View(student.ToList());
         }
-        //Nieuwe student aanmaken
-        public IActionResult Create()
-        {
-            //var student = new Student();
-            var student = new Student();
-            var gebruiker =  _context.Gebruikers.OrderByDescending(x => x.GebruikerId).ToList();
-            ViewBag.LastGebruiker = gebruiker;
-            return View(student);
-        }
+        #region Detailpagina Student
         public async Task<IActionResult> DetailsAsync(int? id)
         {
             if (id == null)
@@ -46,6 +41,14 @@ namespace HogeschoolPXL.Controllers
             }
             var studentCard = new StudentCard(_context, student);
             return View(studentCard);
+        }
+        #endregion
+        #region Nieuwe Student aanmaken
+        public IActionResult Create()
+        {
+            //var student = new Student();
+            var student = new Student();
+            return View(student);
         }
         [HttpPost]
         public IActionResult Create(Gebruiker gebruiker)
@@ -68,6 +71,8 @@ namespace HogeschoolPXL.Controllers
             _context.Students.Add(s);
             _context.SaveChanges();
         }
+        #endregion
+        #region Student verwijderen
         public async Task<IActionResult> Delete (int? id)
         {
             if (id == null)
@@ -91,27 +96,30 @@ namespace HogeschoolPXL.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        #endregion
+        #region Student aanpassen
         [HttpGet]
-        public async Task<IActionResult> Edit(int id)
+        public IActionResult Edit(int? id)
         {
-            var student = await _context.Students.Include(x => x.Gebruiker).FirstOrDefaultAsync(x => x.StudentId == id);
+            var student = _context.Students.Include(x => x.Gebruiker).FirstOrDefault(x => x.StudentId == id);
             var studentCard = new StudentCard(_context, student);
+            
             return View(studentCard);
-        }    
-        public IActionResult Edit(Student student)
+        }
+        public async Task<IActionResult> Edit(Gebruiker gebruiker)
         {
+            var id = gebruiker.GebruikerId;
+            var test = gebruiker.Naam;
             if (ModelState.IsValid)
             {
-                _context.Gebruikers.Update(student.Gebruiker);
-                _context.Students.Update(student);
-                _context.SaveChanges();
+                Gebruiker Updategebruiker = await _context.Gebruikers.FindAsync(id);
+                Updategebruiker.Naam = gebruiker.Naam;
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
-        private bool StudentExists(int id)
-        {
-            return _context.Students.Any(x => x.StudentId == id);
-        }
+        #endregion
     }
 }

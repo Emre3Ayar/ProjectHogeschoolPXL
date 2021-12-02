@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HogeschoolPXL.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20211110205714_Classes")]
-    partial class Classes
+    [Migration("20211112230102_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,6 +44,7 @@ namespace HogeschoolPXL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Naam")
@@ -51,6 +52,7 @@ namespace HogeschoolPXL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Voornaam")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("GebruikerId");
@@ -66,10 +68,11 @@ namespace HogeschoolPXL.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Afbeelding")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("KostPrijs")
-                        .HasColumnType("float");
+                    b.Property<decimal>("KostPrijs")
+                        .HasColumnType("decimal(8,2)");
 
                     b.Property<string>("Titel")
                         .IsRequired()

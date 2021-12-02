@@ -18,7 +18,7 @@ namespace HogeschoolPXL.Data
             {
                 context.Database.Migrate();
             }
-            if (!context.Gebruikers.Any() && !context.Students.Any() && !context.Lectors.Any() && !context.Handboeken.Any())
+            if (!context.Gebruikers.Any() )//&& !context.Students.Any() && !context.Lectors.Any() && !context.Handboeken.Any() && !context.VakLectors.Any() && !context.Vakken.Any() && !context.AcademieJaren.Any() && !context.Inschrijvingen.Any())
             {
                 var gebruiker = new Gebruiker { Naam = "Ayar", Voornaam = "Emre", Email = "emre@hotmail.com" };
                 var gebruiker2 = new Gebruiker { Naam = "Bob", Voornaam = "Marley", Email = "bob@hotmail.com" };
@@ -32,7 +32,7 @@ namespace HogeschoolPXL.Data
                 var lector = new Lector { Gebruiker = gebruiker3 };
                 context.Lectors.AddRange(lector);
                 context.SaveChanges();
-                var handboek = new Handboek { Titel = "C# Web1", Afbeelding = "C# Web1", KostPrijs = 20.99, UitgifteDatum = DateTime.ParseExact("2021-07-21", "yyyy-MM-dd", null) };
+                var handboek = new Handboek { Titel = "C# Web1", Afbeelding = "C# Web1", KostPrijs = 20.99M, UitgifteDatum = DateTime.ParseExact("2021-07-21", "yyyy-MM-dd", null) };
                 context.Handboeken.AddRange(handboek);
                 context.SaveChanges();
                 var vak = new Vak { VakNaam = "C# Web 1", StudiePunten = 6 , Handboek = handboek};
@@ -40,6 +40,12 @@ namespace HogeschoolPXL.Data
                 context.SaveChanges();
                 var vaklector = new VakLector { Vak = vak, Lector = lector};
                 context.VakLectors.AddRange(vaklector);
+                context.SaveChanges();
+                var academiejaar = new AcademieJaar { StartDatum = DateTime.ParseExact("2021-09-20", "yyyy-MM-dd", null) };
+                context.AcademieJaren.AddRange(academiejaar);
+                context.SaveChanges();
+                var inschrijving = new Inschrijving { StudentId = student.StudentId, VakLectorId = vaklector.VakLectorId, AcademieJaar = academiejaar};
+                context.Inschrijvingen.AddRange(inschrijving);
                 context.SaveChanges();
             }
         }

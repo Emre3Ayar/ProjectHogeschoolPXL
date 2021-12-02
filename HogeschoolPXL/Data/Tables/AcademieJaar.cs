@@ -8,9 +8,10 @@ namespace HogeschoolPXL.Data.Tables
 {
     public class AcademieJaar
     {
+        [Required]
         public int AcademieJaarId { get; set; }
         [Required]
-        public DateTime StartDatum { get; set; }
+        public DateTime StartDatum { get; set; }     
 
         public ICollection<Inschrijving> Inschrijvingen { get; set; }
     }

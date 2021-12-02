@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HogeschoolPXL.Migrations
 {
-    public partial class Classes : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,19 +21,72 @@ namespace HogeschoolPXL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Gebruikers",
+                columns: table => new
+                {
+                    GebruikerId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Naam = table.Column<string>(nullable: false),
+                    Voornaam = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Gebruikers", x => x.GebruikerId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Handboeken",
                 columns: table => new
                 {
                     HandboekId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titel = table.Column<string>(nullable: false),
-                    KostPrijs = table.Column<double>(nullable: false),
+                    KostPrijs = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
                     UitgifteDatum = table.Column<DateTime>(nullable: false),
-                    Afbeelding = table.Column<string>(nullable: true)
+                    Afbeelding = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Handboeken", x => x.HandboekId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Lectors",
+                columns: table => new
+                {
+                    LectorId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    GebruikerId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Lectors", x => x.LectorId);
+                    table.ForeignKey(
+                        name: "FK_Lectors_Gebruikers_GebruikerId",
+                        column: x => x.GebruikerId,
+                        principalTable: "Gebruikers",
+                        principalColumn: "GebruikerId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Students",
+                columns: table => new
+                {
+                    StudentId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    GebruikerId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Students", x => x.StudentId);
+                    table.ForeignKey(
+                        name: "FK_Students_Gebruikers_GebruikerId",
+                        column: x => x.GebruikerId,
+                        principalTable: "Gebruikers",
+                        principalColumn: "GebruikerId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -132,6 +185,16 @@ namespace HogeschoolPXL.Migrations
                 column: "VakLectorId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Lectors_GebruikerId",
+                table: "Lectors",
+                column: "GebruikerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_GebruikerId",
+                table: "Students",
+                column: "GebruikerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Vakken_HandboekId",
                 table: "Vakken",
                 column: "HandboekId");
@@ -156,10 +219,19 @@ namespace HogeschoolPXL.Migrations
                 name: "AcademieJaren");
 
             migrationBuilder.DropTable(
+                name: "Students");
+
+            migrationBuilder.DropTable(
                 name: "VakLectors");
 
             migrationBuilder.DropTable(
+                name: "Lectors");
+
+            migrationBuilder.DropTable(
                 name: "Vakken");
+
+            migrationBuilder.DropTable(
+                name: "Gebruikers");
 
             migrationBuilder.DropTable(
                 name: "Handboeken");

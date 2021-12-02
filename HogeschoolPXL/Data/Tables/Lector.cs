@@ -8,10 +8,11 @@ namespace HogeschoolPXL.Data.Tables
 {
     public class Lector
     {
+        [Required]
         public int LectorId { get; set; }
         [Required]
         public int GebruikerId { get; set; }
-
+        
 
         public Gebruiker Gebruiker { get; set; }
         public ICollection<VakLector> VakLectors { get; set; }

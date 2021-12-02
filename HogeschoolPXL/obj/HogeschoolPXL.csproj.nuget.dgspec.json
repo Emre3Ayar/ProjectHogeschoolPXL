@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\CWeb\\HogeschoolPXL\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj": {}
+    "C:\\Users\\emer-\\OneDrive\\Documenten\\CWeb\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj": {}
   },
   "projects": {
-    "C:\\CWeb\\HogeschoolPXL\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj": {
+    "C:\\Users\\emer-\\OneDrive\\Documenten\\CWeb\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\CWeb\\HogeschoolPXL\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj",
+        "projectUniqueName": "C:\\Users\\emer-\\OneDrive\\Documenten\\CWeb\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj",
         "projectName": "HogeschoolPXL",
-        "projectPath": "C:\\CWeb\\HogeschoolPXL\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj",
+        "projectPath": "C:\\Users\\emer-\\OneDrive\\Documenten\\CWeb\\ProjectHogeschoolPXL\\HogeschoolPXL\\HogeschoolPXL.csproj",
         "packagesPath": "C:\\Users\\emer-\\.nuget\\packages\\",
-        "outputPath": "C:\\CWeb\\HogeschoolPXL\\ProjectHogeschoolPXL\\HogeschoolPXL\\obj\\",
+        "outputPath": "C:\\Users\\emer-\\OneDrive\\Documenten\\CWeb\\ProjectHogeschoolPXL\\HogeschoolPXL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -44,6 +44,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.18, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.19, )"
@@ -77,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

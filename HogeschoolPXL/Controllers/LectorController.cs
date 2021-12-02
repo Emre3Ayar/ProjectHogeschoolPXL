@@ -23,29 +23,12 @@ namespace HogeschoolPXL.Controllers
             var lector = _context.Lectors.Include(a => a.Gebruiker);
             return View(lector.ToList());
         }
-        //Nieuwe lector aanmaken
+        #region Nieuwe Lector aanmaken
         public IActionResult Create()
         {
-            //var student = new Student();
             var lector = new Lector();
-            var gebruiker = _context.Gebruikers.OrderByDescending(x => x.GebruikerId).ToList();
-            ViewBag.LastGebruiker = gebruiker;
             return View(lector);
-        }
-        public async Task<IActionResult> DetailsAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var lector = await _context.Lectors.Include(x => x.Gebruiker).FirstOrDefaultAsync(x => x.LectorId == id);
-            if (lector == null)
-            {
-                return NotFound();
-            }
-            var lectorCard = new LectorCard(_context, lector);
-            return View(lectorCard);
-        }
+        }      
         [HttpPost]
         public IActionResult Create(Gebruiker gebruiker)
         {
@@ -67,6 +50,24 @@ namespace HogeschoolPXL.Controllers
             _context.Lectors.Add(l);
             _context.SaveChanges();
         }
+        #endregion
+        #region Detailpagina Lector
+        public async Task<IActionResult> DetailsAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var lector = await _context.Lectors.Include(x => x.Gebruiker).FirstOrDefaultAsync(x => x.LectorId == id);
+            if (lector == null)
+            {
+                return NotFound();
+            }
+            var lectorCard = new LectorCard(_context, lector);
+            return View(lectorCard);
+        }
+        #endregion
+        #region Lector verwijderen
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -90,5 +91,30 @@ namespace HogeschoolPXL.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        #endregion
+        #region Student aanpassen
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            var lector = _context.Lectors.Include(x => x.Gebruiker).FirstOrDefault(x => x.LectorId == id);
+            var lectorCard = new LectorCard(_context, lector);
+
+            return View(lectorCard);
+        }
+        public async Task<IActionResult> Edit(Gebruiker gebruiker)
+        {
+            var id = gebruiker.GebruikerId;
+            var test = gebruiker.Naam;
+            if (ModelState.IsValid)
+            {
+                Gebruiker Updategebruiker = await _context.Gebruikers.FindAsync(id);
+                Updategebruiker.Naam = gebruiker.Naam;
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
     }
 }

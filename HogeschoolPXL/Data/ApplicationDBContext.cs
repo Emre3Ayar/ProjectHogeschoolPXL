@@ -1,5 +1,6 @@
 ﻿using HogeschoolPXL.Data.Tables;
 using HogeschoolPXL.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using Student = HogeschoolPXL.Data.Tables.Student;
 
 namespace HogeschoolPXL.Data
 {
-    public class ApplicationDBContext : DbContext
+    public class ApplicationDBContext : IdentityDbContext
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {

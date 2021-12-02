@@ -326,3 +326,11 @@ C:\CWeb\HogeschoolPXL\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1
 C:\CWeb\HogeschoolPXL\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\HogeschoolPXL.dll
 C:\CWeb\HogeschoolPXL\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\HogeschoolPXL.pdb
 C:\CWeb\HogeschoolPXL\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\HogeschoolPXL.genruntimeconfig.cache
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Lector\Edit.cshtml.g.cs

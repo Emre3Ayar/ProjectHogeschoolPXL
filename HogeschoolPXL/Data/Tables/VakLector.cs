@@ -8,12 +8,12 @@ namespace HogeschoolPXL.Data.Tables
 {
     public class VakLector
     {
+        [Required]
         public int VakLectorId { get; set; }
-
+        [Required]
         public int LectorId { get; set; }
-
-        public int VakId { get; set; }
-
+        [Required]
+        public int VakId { get; set; }       
 
         public Lector Lector { get; set; }
         public Vak Vak { get; set; }

@@ -2,8 +2,6 @@
 @model HogeschoolPXL.TimeTrackModel
 @{
 }
-<h1>BELANGRIJK</h1>
-<h1>De Database werkt 100%, soms word het niet aangemaakt(zelf aanmaken) PXL_Emre_Ayar</h1>
 
 <body id="TimeTrack">
     <p>6/10/2021: Begonnen met classes maken en views met Datacontext en simpel css opmaak</p>
@@ -19,18 +17,25 @@
         Index pagina Student,Lector
     </p>
     <p>11/11/2021: Delete,Detail,Edit pagina voor: Handboek,Lector,Student</p>
-
+    <p>13/11/2021: IdentityFramework toepassen: Views,AccountController,ViewModels</p>
+    <p>20/11/2021: Edit functie geprobeerd maar niet opgelost</p>
+    <p>21/11/2021: Model validation Handboek datum</p>
+    <p>1/12/2021: Edit pagina van student maken om te zien hoe ik een Edit pagina kan maken (gelukt)</p>
+    <p>2/12/2021: html aanpassing create pagina Lector, Student</p>
     <div id="ToDo">
         <ul>
-            <li>- Edit pagina's werken nog niet</li>
-            <li>- Zelfvulende data bij create om problemen te voorkomen</li>
-            <li>- Edit pagina's werken nog niet</li>
-            <li>- Geen enkel ModelValidation</li>
-            <li>- Seeddata mist AcademieJaar, Inschrijving</li>
+            <li>Delete functie Handboek</li>
+            <li>Cursus: enkel creatie als er 1 handboek bestaat</li>
+            <li>Inschrijving: enkel toegelaten als er studenten zijn en een cursus</li>
+            <li>Identity</li>
+            <li>SeedDataIdentity</li>
+            <li>Roles</li>
         </ul>
     </div>
     <div id="Done">
         <ul>
+            <li>- Seeddata AcademieJaar, Inschrijving</li>
+            <li>- ModelValidation datum handboek</li>
             <li>- Detail,Index,Delete,Create pagina's werken allemaal voor Student,Lector,Handboek</li>
             <li>- Taghelper: LectorCard,StudentCard</li>
             <li>- Seeddata meerderheid klaar</li>
@@ -38,9 +43,4 @@
             <li>- Overal CSS styling toegepast (kan op een betere manier maar door gebrek aan tijd)</li>
         </ul>
     </div>
-    <p>
-        Ik weet dat er enkele stukken nog niet in orde is.
-        Ik heb veel problemen gehad in het midden van mijn project.
-        Om het nog goed af te ronden ben ik rustig opnieuw begonnen en stap voor stap alles geimplementeerd
-    </p>
 </body>
