@@ -334,3 +334,9 @@ C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\bin\D
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Lector\Edit.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Vak\Index.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Vak\Details.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Vak\Delete.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Vak\Create.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Inschrijving\Index.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Vak\Edit.cshtml.g.cs

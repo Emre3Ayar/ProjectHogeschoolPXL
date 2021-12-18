@@ -22,6 +22,7 @@ namespace HogeschoolPXL.Controllers
             var handboek = _context.Handboeken;
             return View(handboek);
         }
+        //Detail van een Handboek
         public IActionResult Details(int id)
         {
             var handboek = _context.Handboeken.Where(x => x.HandboekId == id).FirstOrDefault();
@@ -33,8 +34,7 @@ namespace HogeschoolPXL.Controllers
         {
             var handboek = new Handboek();
             return View(handboek);
-        }
-        //Detail van een Handboek
+        }       
         //aanmaken handboek
         [HttpPost]
         public IActionResult Create(Handboek handboek)

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HogeschoolPXL.Data.Tables.Inschrijving>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Inschrijvingen lijst</h1>
+
+<p>
+    <a asp-action="Create" style="font-size:150%">Nieuwe inschrijving</a>
+</p>
+<table border="1" style="width: 90%; background-color: #E8E8E8; border-color: #0084F1; border-width: 20px;font-size: 160%">
+    <thead style="background-color:black;color:white;text-align:center">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InschrijvingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.Gebruiker.Naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student.Gebruiker.Voornaam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AcademieJaar.StartDatum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td style="font-weight: 800; padding-left:10px">
+                @Html.DisplayFor(modelItem => item.InschrijvingId)
+            </td>
+            <td style="font-weight: 800; padding-left:10px">
+                @Html.DisplayFor(modelItem => item.Student.Gebruiker.Naam)
+            </td>
+            <td style="font-weight: 800; padding-left:10px">
+                @Html.DisplayFor(modelItem => item.Student.Gebruiker.Voornaam)
+            </td>
+            <td style="font-weight: 800; padding-left:10px">
+                @Html.DisplayFor(modelItem => item.AcademieJaar.StartDatum)
+            </td>            
+            <td class="text-center">
+                @*<a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>*@
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

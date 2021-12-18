@@ -1,0 +1,38 @@
+﻿@model HogeschoolPXL.Data.Tables.Vak
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Vak toevoegen</h1>
+<hr />
+<div>
+    <div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <table>
+                <tr style="margin-right:10px">
+                    <td><label asp-for="VakNaam" class="control-label"></label></td>
+                    <td></td>
+                    <td><label asp-for="StudiePunten" class="control-label"></label></td>
+                    <td></td>
+                    <td><label class="control-label">Handboek</label></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><input asp-for="VakNaam" class="form-control" value="" /></td>
+                    <td><span asp-validation-for="VakNaam" class="text-danger"></span></td>
+                    <td><input asp-for="StudiePunten" class="form-control" value="" /></td>
+                    <td><span asp-validation-for="StudiePunten" class="text-danger"></span></td>
+                    <td><select asp-for="HandboekId" class="control-label" asp-items="ViewBag.HandboekId"></select></td>
+                    <td><span asp-validation-for="HandboekId" class="text-danger"></span></td>
+                </tr>
+            </table>
+            <div>
+                <input type="submit" value="Create" style="width: 60%; height: 60%;background-color: #0084F1; color: white; font-size: 200%; border: solid black 5px;margin-top: 20px" />
+            </div>
+        </form>
+    </div>
+</div>
+<div style="margin-top:5%">
+    <a asp-action="Index" style="background-color: black; color: #0084F1; padding: 1%; border: solid #0084F1 5px ">Naar lijst</a>
+</div>
