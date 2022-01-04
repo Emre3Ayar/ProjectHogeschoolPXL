@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a style="color: white" asp-controller="Account" asp-action="Logout">Logout</a>
+    </li>
+}
+else
+{
+    <li style="margin-top:20px">
+        <a style="color: white" asp-controller="Account" asp-action="Login">Login</a>
+    </li>
+    <li style="margin-bottom:20px">
+        <a style="color: white" asp-controller="Account" asp-action="Register">Register</a>
+    </li>
+}

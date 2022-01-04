@@ -30,7 +30,11 @@ namespace HogeschoolPXL
             //ConnectionString met database
             services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:PXLConnection"]));
             //Identity framework
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDBContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 6;
+            }).AddEntityFrameworkStores<ApplicationDBContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,7 +66,7 @@ namespace HogeschoolPXL
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-            SeedData.MigrateAndPopulated(app);
+            SeedData.EnsurePopulatedAsync(app);
         }
     }
 }

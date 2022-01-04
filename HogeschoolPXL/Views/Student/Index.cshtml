@@ -5,7 +5,6 @@
 }
 
 <h1>Lijst van Studenten</h1>
-<p><a asp-controller="Inschrijving" asp-action="Index">inschrijvingen</a></p>
 <p>
     <a asp-action="Create" style="font-size:150%">Nieuwe student</a>
 </p>
@@ -40,7 +39,8 @@
                 <td class="text-center">
                     <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> -
                     <a asp-action="Details" asp-route-id="@item.StudentId">Details</a> -
-                    <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a> - 
+                    <a asp-action="Inschrijving" asp-route-id="@item.StudentId">Inschrijvingen</a>
                 </td>
             </tr>
         }

@@ -1,4 +1,5 @@
 ﻿using HogeschoolPXL.Data;
+using HogeschoolPXL.Data.Tables;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -24,5 +25,22 @@ namespace HogeschoolPXL.Controllers
             //ViewData["AcademieJaarId"] = new SelectList(_context.AcademieJaren, "AcademieJaarId","StartDatum");
             return View(inschrijving.ToList());
         }
+        //public  IActionResult Create()
+        //{
+        //    var inschrijving = new Inschrijving();
+        //    //_context.Gebruikers.ToList();
+        //    ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId");
+        //    return View(inschrijving);
+        //}
+        //[HttpPost]
+        //public IActionResult Create(Inschrijving inschrijving)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _context.Inschrijvingen.Add(inschrijving);
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(inschrijving);
+        //}
     }
 }

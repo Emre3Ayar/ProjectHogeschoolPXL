@@ -340,3 +340,6 @@ C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\D
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Vak\Create.cshtml.g.cs
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Inschrijving\Index.cshtml.g.cs
 C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Vak\Edit.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Inschrijving\Create.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Student\Inschrijving.cshtml.g.cs
+C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs

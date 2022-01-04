@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace HogeschoolPXL.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class StudentController : Controller
     {
         ApplicationDBContext _context;
@@ -121,5 +121,22 @@ namespace HogeschoolPXL.Controllers
             return RedirectToAction(nameof(Index));
         }
         #endregion
+        public async Task<IActionResult> InschrijvingAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var student = await _context.Students.Include(x => x.Gebruiker).FirstOrDefaultAsync(x => x.StudentId == id);
+            var inschrijving = new Inschrijving
+                {
+                StudentId = student.StudentId, 
+                
+            };
+            ViewData["VakId"] = new SelectList(_context.Vakken, "VakId", "VakNaam");
+            _context.Inschrijvingen.Add(inschrijving);
+            var studentCard = new StudentCard(_context, student);
+            return View(studentCard);
+        }
     }
 }

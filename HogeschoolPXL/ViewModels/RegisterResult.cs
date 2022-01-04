@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace HogeschoolPXL.ViewModels
 {
-    public class RegisterViewModel : LoginViewModel
+    public class RegisterResult
     {
-        public string RoleId { get; set; }
+        public bool Succeeded { get; set; }
+        public List<string> Errors = new List<string>();
     }
 }
