@@ -114,6 +114,8 @@ namespace HogeschoolPXL.Controllers
             {
                 Gebruiker Updategebruiker = await _context.Gebruikers.FindAsync(id);
                 Updategebruiker.Naam = gebruiker.Naam;
+                Updategebruiker.Email = gebruiker.Email;
+                Updategebruiker.Voornaam = gebruiker.Voornaam;
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));

@@ -97,9 +97,12 @@ namespace HogeschoolPXL.Controllers
         }
         public async Task<IActionResult> Edit(Vak vak)
         {
+            var id = vak.VakId;
             if (ModelState.IsValid)
             {
-                _context.Vakken.Update(vak);
+                Vak UpdateVak = await _context.Vakken.FindAsync(id);
+                UpdateVak.StudiePunten = vak.StudiePunten;
+                UpdateVak.VakNaam = vak.VakNaam;
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));

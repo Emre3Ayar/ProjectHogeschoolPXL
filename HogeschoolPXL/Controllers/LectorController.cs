@@ -92,7 +92,7 @@ namespace HogeschoolPXL.Controllers
             return RedirectToAction(nameof(Index));
         }
         #endregion
-        #region Student aanpassen
+        #region Lector aanpassen
         [HttpGet]
         public IActionResult Edit(int? id)
         {
@@ -109,6 +109,8 @@ namespace HogeschoolPXL.Controllers
             {
                 Gebruiker Updategebruiker = await _context.Gebruikers.FindAsync(id);
                 Updategebruiker.Naam = gebruiker.Naam;
+                Updategebruiker.Voornaam = gebruiker.Voornaam;
+                Updategebruiker.Email = gebruiker.Email;
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));

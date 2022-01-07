@@ -88,5 +88,25 @@ namespace HogeschoolPXL.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        #region Handboek aanpassen
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            var handboek = _context.Handboeken.FirstOrDefault(x => x.HandboekId == id);
+
+            return View(handboek);
+        }
+        public async Task<IActionResult> Edit(Handboek handboek)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Handboeken.Update(handboek);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
     }
 }
