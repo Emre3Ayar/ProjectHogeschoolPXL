@@ -1,5 +1,6 @@
 ﻿using HogeschoolPXL.Data;
 using HogeschoolPXL.Data.Tables;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace HogeschoolPXL.Controllers
 {
+    [Authorize(Roles = "STUDENT,ADMIN,LECTOR")]
     public class VakController : Controller
     {
         ApplicationDBContext _context;

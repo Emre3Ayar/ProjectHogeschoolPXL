@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace HogeschoolPXL.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "ADMIN,LECTOR")]
     public class StudentController : Controller
     {
         ApplicationDBContext _context;

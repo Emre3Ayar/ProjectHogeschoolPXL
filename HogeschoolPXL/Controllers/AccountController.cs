@@ -1,4 +1,6 @@
 ﻿using HogeschoolPXL.Data;
+using HogeschoolPXL.Helpers;
+using HogeschoolPXL.Models;
 using HogeschoolPXL.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -12,16 +14,17 @@ namespace HogeschoolPXL.Controllers
 {
     public class AccountController : Controller
     {
-        UserManager<IdentityUser> _userManager;
-        SignInManager<IdentityUser> _signInManager;
-        RoleManager<IdentityRole> _roleManager;
+        UserManager<CustomIdentityUser> _userManager;
+        SignInManager<CustomIdentityUser> _signInManager;
+        //RoleManager<IdentityRole> _roleManager;
         ApplicationDBContext _context;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager, ApplicationDBContext context)
+        public AccountController(UserManager<CustomIdentityUser> userManager, SignInManager<CustomIdentityUser> signInManager, ApplicationDBContext context)
         {
+            //RoleManager<IdentityRole> roleManager
             _userManager = userManager;
             _signInManager = signInManager;
-            _roleManager = roleManager;
+            //_roleManager = roleManager;
             _context = context;
         }
         //Logout
@@ -43,28 +46,33 @@ namespace HogeschoolPXL.Controllers
         [HttpPost]
         public async Task<IActionResult> LoginAsync(LoginViewModel user)
         {
-            //if (ModelState.IsValid)
-            //{
+            if (ModelState.IsValid)
+            {
                 var identityUser = await _userManager.FindByEmailAsync(user.Email);
                 if (identityUser != null)
                 {
                     var result = await _signInManager.PasswordSignInAsync(user.Email, user.Password, false, lockoutOnFailure: false);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Index", "Student");
+                        return RedirectToAction("Index", "Home");
                     }
                     else
                     {
                         ModelState.AddModelError("", "invalid login attempt");
                     }
                 }
-            //}
+                else
+                {
+                    ModelState.AddModelError("", "invalid login attempt");
+                }
+            }
             return View(user);
         }
         //Register
         [HttpGet]
         public IActionResult Register()
         {
+            ViewBag.Roles = new SelectList(RoleHelper.Roles);
             return View();
         }
         [HttpPost]
@@ -72,8 +80,9 @@ namespace HogeschoolPXL.Controllers
         {
             if (ModelState.IsValid)
             {
-                var identityUser = new IdentityUser { UserName = user.Email, Email = user.Email };
-                var result = await _userManager.CreateAsync(identityUser, user.Password);
+                var customIdentityUser = new CustomIdentityUser { UserName = user.Email, Email = user.Email};
+                customIdentityUser.RoleName = user.RoleName;
+                var result = await _userManager.CreateAsync(customIdentityUser, user.Password);
                 if (result.Succeeded)
                 {
                     return View("Login");

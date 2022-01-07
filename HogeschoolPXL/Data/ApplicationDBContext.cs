@@ -10,7 +10,7 @@ using Student = HogeschoolPXL.Data.Tables.Student;
 
 namespace HogeschoolPXL.Data
 {
-    public class ApplicationDBContext : IdentityDbContext
+    public class ApplicationDBContext : IdentityDbContext<CustomIdentityUser>
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
         {

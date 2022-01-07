@@ -1,4 +1,5 @@
 using HogeschoolPXL.Data;
+using HogeschoolPXL.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +31,7 @@ namespace HogeschoolPXL
             //ConnectionString met database
             services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:PXLConnection"]));
             //Identity framework
-            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            services.AddIdentity<CustomIdentityUser, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = true;
                 options.Password.RequiredLength = 6;

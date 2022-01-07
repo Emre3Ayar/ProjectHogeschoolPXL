@@ -8,9 +8,11 @@ namespace HogeschoolPXL.ViewModels
 {
     public class LoginViewModel
     {
+        [Key]
+        [Required]
         public string Email { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
-        [Compare("Password", ErrorMessage = "Password moet overeenkomen!")]
-        public string ConfirmPassword { get; set; }
     }
 }
