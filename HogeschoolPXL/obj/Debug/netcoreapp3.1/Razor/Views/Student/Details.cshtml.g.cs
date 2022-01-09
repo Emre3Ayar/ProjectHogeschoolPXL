@@ -26,8 +26,15 @@ using HogeschoolPXL.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\Views\_ViewImports.cshtml"
+using HogeschoolPXL.Data.Tables;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7aa13a165c6a3fc61863b9243790ed01382d5ae3", @"/Views/Student/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1cf08dbac3995c3f588ffc748a1ab203173a7093", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1d62b561401c13426b998fdb7430c2b48ba19bb4", @"/Views/_ViewImports.cshtml")]
     public class Views_Student_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<HogeschoolPXL.ViewModels.StudentCard>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -51,6 +58,7 @@ using HogeschoolPXL.Models;
                 return __backed__tagHelperScopeManager;
             }
         }
+        private global::HogeschoolPXL.TagHelpers.StudentCardTagHelper __HogeschoolPXL_TagHelpers_StudentCardTagHelper;
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
@@ -113,17 +121,28 @@ using HogeschoolPXL.Models;
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n\r\n<student-card");
-            BeginWriteAttribute("student-card-view-model", " student-card-view-model=\"", 1248, "\"", 1280, 1);
+            WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n\r\n");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("student-card", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7aa13a165c6a3fc61863b9243790ed01382d5ae36292", async() => {
+            }
+            );
+            __HogeschoolPXL_TagHelpers_StudentCardTagHelper = CreateTagHelper<global::HogeschoolPXL.TagHelpers.StudentCardTagHelper>();
+            __tagHelperExecutionContext.Add(__HogeschoolPXL_TagHelpers_StudentCardTagHelper);
 #nullable restore
 #line 49 "C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\Views\Student\Details.cshtml"
-WriteAttributeValue("", 1274, Model, 1274, 6, false);
+__HogeschoolPXL_TagHelpers_StudentCardTagHelper.StudentCardViewModel = Model;
 
 #line default
 #line hidden
 #nullable disable
-            EndWriteAttribute();
-            WriteLiteral("></student-card>\r\n\r\n<div>\r\n    ");
+            __tagHelperExecutionContext.AddTagHelperAttribute("student-card-view-model", __HogeschoolPXL_TagHelpers_StudentCardTagHelper.StudentCardViewModel, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            WriteLiteral("\r\n\r\n<div>\r\n    ");
 #nullable restore
 #line 52 "C:\Users\emer-\OneDrive\Documenten\CWeb\ProjectHogeschoolPXL\HogeschoolPXL\Views\Student\Details.cshtml"
 Write(Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }));
@@ -132,7 +151,7 @@ Write(Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }));
 #line hidden
 #nullable disable
             WriteLiteral(" |\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7aa13a165c6a3fc61863b9243790ed01382d5ae36722", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7aa13a165c6a3fc61863b9243790ed01382d5ae38020", async() => {
                 WriteLiteral("Back to List");
             }
             );

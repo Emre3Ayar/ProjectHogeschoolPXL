@@ -1,5 +1,6 @@
 ﻿using HogeschoolPXL.Data;
 using HogeschoolPXL.Data.Tables;
+using HogeschoolPXL.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,7 +14,7 @@ namespace HogeschoolPXL.Controllers
 {
     [Authorize(Roles = "STUDENT,ADMIN,LECTOR")]
     public class VakController : Controller
-    {
+    {       
         ApplicationDBContext _context;
         public VakController(ApplicationDBContext context)
         {
@@ -21,7 +22,7 @@ namespace HogeschoolPXL.Controllers
         }
         //Index pagina
         public IActionResult Index()
-        {
+        {           
             var vak = _context.Vakken.Include(x => x.Handboek);
             return View(vak.ToList());
         }
@@ -110,5 +111,9 @@ namespace HogeschoolPXL.Controllers
             return RedirectToAction(nameof(Index));
         }
         #endregion
+        public IActionResult Studiepunten(double studiepunten)
+        {
+            return View(_context.Vakken.Where(x => x.StudiePunten == studiepunten));
+        }
     }
 }

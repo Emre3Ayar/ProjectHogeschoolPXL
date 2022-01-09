@@ -1,0 +1,20 @@
+﻿@model IEnumerable<HogeschoolPXL.Data.Tables.Vak>
+@{
+    ViewData["Title"] = "View";
+}
+@foreach (var item in Model)
+{
+<table border="1" style="width: 90%; background-color: #E8E8E8; border-color: #0084F1; border-width: 20px;font-size: 160%">
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VakNaam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudiePunten)
+        </td>
+    </tr>
+</table>
+}
+<div style="margin-top:5%">
+    <a asp-action="Index" style="background-color: black; color: #0084F1; padding: 1%; border: solid #0084F1 5px ">Naar vakken lijst</a>
+</div>
